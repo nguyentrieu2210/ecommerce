@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Example</title>
+    <style>
+        /* Phong cách cho phần tử chứa ghi chú */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* Phong cách cho đoạn text (ghi chú) */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            min-width: 120px;
+            background-color: #fff;
+            color: rgb(15, 24, 36);
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Vị trí của ghi chú */
+            left: 50%;
+            margin-left: -60px; /* Điều chỉnh vị trí ngang */
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 6px;
+            border: 1px solid #DFDFDF;
+            font-size: 14px;
+            font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        /* Phong cách cho mũi tên của ghi chú */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%; /* Mũi tên sẽ xuất hiện bên dưới ghi chú */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
+
+        /* Hiển thị ghi chú khi hover qua phần tử */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .style-quantity > div > span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+        }
+        .style-quantity > div:first-child > span:first-child {
+            background-color: #1BB394;
+        }
+        .style-quantity > div:last-child > span:first-child {
+            background-color: #F06875;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tooltip" style="margin-top: 100px; margin-right: 100px">Hover over me
+    <div class="tooltiptext style-quantity">
+        <div style="width: 200px !important;"><span></span> <span>Số lượng đã nhập: 0</span></div>
+        <div><span></span> <span>Số lượng đã từ chối: 0</span></div>
+    </div>
+</div>
+
+</body>
+</html>
